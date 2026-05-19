@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: realestate
+    database: RealEstateDB       # the OLTP source database
+    schema: realestate           # the schema inside it
+    tables:
+      - name: listings
+      - name: locations
+      - name: agents
+      - name: brokers
+      - name: languages
+      - name: agent_languages
+      - name: amenities
+      - name: listing_amenities
+      - name: property_categories
+      - name: listing_contacts
+      - name: listing_images

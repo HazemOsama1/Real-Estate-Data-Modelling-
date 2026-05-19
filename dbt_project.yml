@@ -1,0 +1,23 @@
+name: 'realestate_dwh'
+version: '1.0.0'
+config-version: 2
+
+profile: 'realestate_dwh'   # must match the name in profiles.yml exactly
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  realestate_dwh:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
