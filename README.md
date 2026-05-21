@@ -3,10 +3,10 @@
 A full **dimensional data warehouse** for Egyptian real estate listings, built with **dbt (data build tool)** on top of **Microsoft SQL Server**. Raw property listing data scraped from a real estate platform is transformed from a normalised OLTP schema into a clean, analytics-ready star schema.
 
 ---
-
 ## 📐 Architecture Overview
 
 ```
+
 RealEstateDB (OLTP source)          RealEstate_DWH (target DWH)
 ─────────────────────────           ─────────────────────────────
 realestate.listings                 dbt_transform_marts.fact_listings
@@ -31,6 +31,9 @@ The pipeline has three layers:
 ---
 
 ## 🗂️ Source Schema (RealEstateDB)
+Source ERD:
+<img width="772" height="793" alt="2" src="https://github.com/user-attachments/assets/8ba6f970-d956-485b-a4d5-715048978503" />
+
 
 The OLTP source lives in the `realestate` schema and contains 11 tables:
 
@@ -52,6 +55,10 @@ The OLTP source lives in the `realestate` schema and contains 11 tables:
 ---
 
 ## ⭐ Target Schema (Star Schema)
+
+Dimensional Modelling:
+
+<img width="1062" height="807" alt="1" src="https://github.com/user-attachments/assets/be9e47a9-c53f-4c1d-ad61-6281f41566a9" />
 
 ### Fact Table
 
